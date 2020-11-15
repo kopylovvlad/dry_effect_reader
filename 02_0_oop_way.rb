@@ -1,10 +1,12 @@
 class Application
+  # model layer
   class Converter
     def call(currency)
       currency * rate
     end
   end
 
+  # controller layer
   class MainController
     def call(params)
       Converter.new.call(params[:currency])
@@ -12,7 +14,7 @@ class Application
   end
 
   # middlewares
-  # data conventer from string to integers, data validator, logger, some middleware
+  # data conventer from string to integers, data validator, logger and other stuff
   class Middleware1
     def initialize(app); @app = app; end
     def call(env)

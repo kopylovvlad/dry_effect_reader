@@ -17,7 +17,7 @@ class Application
   end
 
   # middlewares
-  # data conventer from string to integers, data validator, logger, some middleware
+  # data conventer from string to integers, data validator, logger and other stuff
   class Middleware1
     def initialize(app); @app = app; end
     def call(env)

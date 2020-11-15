@@ -39,7 +39,7 @@ class Application
     end
   end
 
-  # NOTE: 2) Application receives dependency implicitly
+  # NOTE: 2) Application receives dependency explicitly
   def initialize(dependency)
     @app = MainController.new(dependency)
   end
@@ -57,7 +57,7 @@ class ApplicationRunner
   end
 
   def call(currency)
-    # NOTE: 1) Application receives dependency implicitly
+    # NOTE: 1) Application receives dependency explicitly
     Application.new(@dependency).call(currency: currency)
   end
 end
